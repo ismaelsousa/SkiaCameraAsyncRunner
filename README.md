@@ -1,3 +1,7 @@
+
+
+
+
 # SkiaCameraAsyncRunner
 
 A React Native Community CLI app that renders a full-screen VisionCamera feed
@@ -39,3 +43,8 @@ npm run android
 # or
 npm run ios
 ```
+
+
+# Example
+
+https://github.com/user-attachments/assets/0db1f89d-5f75-4735-a1d8-9c116207a0c7
