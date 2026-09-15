@@ -6,9 +6,16 @@ import React from 'react';
 import ReactTestRenderer from 'react-test-renderer';
 import App from '../App';
 
-jest.mock('react-native-worklets', () =>
-  require('react-native-worklets/src/mock'),
-);
+jest.mock('react-native-worklets', () => ({
+  scheduleOnRN: jest.fn(
+    (callback: (...args: unknown[]) => unknown, ...args: unknown[]) =>
+      callback(...args),
+  ),
+}));
+
+jest.mock('react-native-reanimated', () => ({
+  useSharedValue: jest.fn((initialValue: unknown) => ({value: initialValue})),
+}));
 
 jest.mock('react-native-vision-camera', () => ({
   useAsyncRunner: jest.fn(() => ({runAsync: jest.fn()})),
